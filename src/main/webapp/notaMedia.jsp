@@ -18,11 +18,17 @@
             float numero3 = Float.parseFloat(request.getParameter("numero3"));
             float notaMed = ((numero1 + numero2 + numero3)/3);
             String nombre = request.getParameter("nombre");
+            String estado = "";
+            if(notaMed >= 5){
+                estado = "Aprobado";
+            }else{
+                estado = "Suspendido";
+            }
         %>
         <h1>Nota media</h1>
         <hr>
         <p>El alumno/a: <%= nombre %>.</p>
-        <p <% if(notaMed >= 5){%>style="color: green;"<%}else{%>style="color: red"<%}%>>Ha sacado una nota media de: <%= notaMed %>.</p>
+        <p <% if(notaMed >= 5){%>style="color: green;"<%}else{%>style="color: red"<%}%>>Ha sacado una nota media de: <%= notaMed %>. Por lo que estás <%= estado %></p>
         <p>Habiendo sacado las siguientes notas.</p>
         <ol>
             <li><%= numero1 %></li>
