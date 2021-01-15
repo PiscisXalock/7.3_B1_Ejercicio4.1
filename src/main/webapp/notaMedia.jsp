@@ -18,9 +18,6 @@
             float numero3 = Float.parseFloat(request.getParameter("numero3"));
             float notaMed = ((numero1 + numero2 + numero3)/3);
             String nombre = request.getParameter("nombre");
-            if(notaMed >= 5){
-                
-            }
         %>
         <h1>Nota media</h1>
         <hr>
